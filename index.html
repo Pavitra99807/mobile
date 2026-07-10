@@ -1,516 +1,519 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MGR Mobile - Moto Razr 50s Premium Deal</title>
-    
-    <!-- Tailwind CSS for modern fluid responsive utility classes -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- GSAP (GreenSock) for high-performance physics, unboxing slam and spring transitions -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    
-    <!-- Google Fonts representing the original image typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: radial-gradient(circle at center, #FFFDF6 0%, #FFEBD1 60%, #F5E5D1 100%);
-            overflow-x: hidden;
-        }
-        .font-montserrat-black {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-        }
-        /* 3D Perspective container setup for parallax */
-        .perspective-container {
-            perspective: 1000px;
-            transform-style: preserve-3d;
-        }
-        /* Floating animations for the two vector phones sitting on the pedestal */
-        @keyframes floatPrimary {
-            0%, 100% { transform: translateY(0px) rotate(1deg); }
-            50% { transform: translateY(-14px) rotate(-1deg); }
-        }
-        @keyframes floatSecondary {
-            0%, 100% { transform: translateY(0px) rotate(-1.5deg); }
-            50% { transform: translateY(-8px) rotate(1.5deg); }
-        }
-        .float-phone-1 {
-            animation: floatPrimary 6s ease-in-out infinite;
-        }
-        .float-phone-2 {
-            animation: floatSecondary 5s ease-in-out infinite;
-        }
-        /* Custom scrollbar matching the theme colorway */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #FFEBD1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #f97316;
-            border-radius: 9999px;
-        }
-    </style>
+
+    <title>MGR Mobile | Motorola Razr 50s</title>
+
+    <!-- Google Fonts -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
-<body class="overflow-x-hidden min-h-screen flex flex-col justify-between select-none">
 
-    <!-- PAPER CRASH INTRO OVERLAY (Interactive, Click anywhere to rip and enter) -->
-    <div id="paper-overlay" onclick="handleCrashReveal()" class="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-stone-950 bg-opacity-40 cursor-pointer">
-        
-        <!-- Left Paper Cover -->
-        <div id="paper-left" class="absolute left-0 top-0 w-1/2 h-full bg-[#FAF6EE] border-r-4 border-dashed border-orange-500 flex flex-col items-end justify-center pr-6 md:pr-16 shadow-[15px_0_35px_rgba(0,0,0,0.15)] transition-transform duration-1000">
-            <h2 class="text-right text-stone-800 text-3xl md:text-6xl font-black uppercase tracking-wider transform -rotate-2 leading-none">
-                EXCLUSIVE<br><span class="text-orange-600 text-4xl md:text-8xl font-montserrat-black">MOTO</span>
-            </h2>
-        </div>
-        
-        <!-- Right Paper Cover -->
-        <div id="paper-right" class="absolute right-0 top-0 w-1/2 h-full bg-[#FAF6EE] border-l-4 border-dashed border-orange-500 flex flex-col items-start justify-center pl-6 md:pl-16 shadow-[-15px_0_35px_rgba(0,0,0,0.15)] transition-transform duration-1000">
-            <h2 class="text-left text-stone-800 text-3xl md:text-6xl font-black uppercase tracking-wider transform rotate-2 leading-none">
-                UNBOXING<br><span class="text-orange-600 text-4xl md:text-8xl font-montserrat-black">DEAL</span>
-            </h2>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            <img src="images/mgr-logo.png" alt="MGR Logo">
+
         </div>
 
-        <!-- Bouncing Fist Slam Action Icon -->
-        <div id="crashing-fist" class="absolute z-50 flex flex-col items-center pointer-events-none">
-            <div class="animate-bounce mb-6 bg-gradient-to-r from-orange-600 to-red-600 text-white font-black px-8 py-3.5 rounded-full shadow-2xl text-xs md:text-base tracking-widest uppercase border-2 border-white">
-                Tap Screen to Crash & Reveal!
+        <nav>
+
+            <ul>
+
+                <li><a href="#">Home</a></li>
+
+                <li><a href="#">Phones</a></li>
+
+                <li><a href="#">Offers</a></li>
+
+                <li><a href="#">About</a></li>
+
+                <li><a href="#">Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <!-- Left Side -->
+
+        <div class="hero-left">
+
+            <span class="offer-tag">
+
+                🔥 TODAY'S BEST PRICE
+
+            </span>
+
+            <h2>
+
+                Motorola
+
+            </h2>
+
+            <h1>
+
+                RAZR <span>50s</span>
+
+            </h1>
+
+            <div class="storage">
+
+                8GB RAM | 256GB Storage
+
             </div>
-            <!-- Hand Fist Vector SVG -->
-            <svg class="w-32 h-32 md:w-44 md:h-44 drop-shadow-[0_25px_30px_rgba(0,0,0,0.55)] transition-transform duration-300 transform hover:scale-110" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="25" y="32" width="46" height="38" rx="14" fill="#e2ab86" />
-                <circle cx="35" cy="36" r="6" fill="#f4ccac" />
-                <circle cx="48" cy="34" r="6.5" fill="#f4ccac" />
-                <circle cx="61" cy="36" r="6" fill="#f4ccac" />
-                <circle cx="71" cy="41" r="5" fill="#f4ccac" />
-                <path d="M22 62 H74 V84 C74 88 22 88 22 84 Z" fill="#e65100" />
-                <circle cx="48" cy="73" r="7" fill="#fff" />
-                <path d="M45 73 L47 75 L52 70" stroke="#2e7d32" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M12 24 L24 30" stroke="#ff9100" stroke-width="3" stroke-linecap="round" />
-                <path d="M88 24 L76 30" stroke="#ff9100" stroke-width="3" stroke-linecap="round" />
-            </svg>
+
+            <p>
+
+                Experience premium foldable technology with flagship performance,
+                stunning design and unbeatable value.
+
+            </p>
+
+            <div class="buttons">
+
+                <a href="https://mgrmobile.com/?srsltid=AfmBOorxvoUTRl-a0dKNOgXlbVD46vuBoVdC6wxhSMRLj33dNcLgWU_D"
+   class="buy-btn"
+   target="_blank"
+   rel="noopener noreferrer">
+    Buy Now
+</a>
+
+                <a href="#" class="video-btn">
+
+                    Watch Video
+
+                </a>
+
+            </div>
+
         </div>
+
+
+
+        <!-- Center -->
+
+        <div class="hero-center">
+
+            <img src="images/razr-open.png"
+                class="phone phone1">
+
+            <img src="images/razr-fold.png"
+                class="phone phone2">
+
+        </div>
+
+
+
+        <!-- Right -->
+
+        <div class="hero-right">
+
+            <div class="price-card">
+
+                <small>Starting From</small>
+
+                <h2>₹31,999</h2>
+
+                <p>GST Included</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Features will come here -->
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+    <div class="section-title">
+        <h2>Why You'll Love It</h2>
+        <p>Designed to impress with premium technology and elegant craftsmanship.</p>
     </div>
 
-    <!-- MAIN SITE VIEWPORT CONTAINER (Revealed dynamically) -->
-    <main id="main-content" class="relative flex-grow flex flex-col justify-between w-full max-w-7xl mx-auto px-4 py-6 md:py-10 z-10 opacity-0 transform scale-95 transition-all duration-700">
+    <!-- Feature 1 -->
+    <div class="feature-row">
 
-        <!-- HEADER PORTION -->
-        <header class="flex justify-between items-start w-full z-20">
-            
-            <!-- 3D Parallax MGR Brand Logo Box -->
-            <div id="mgr-logo" class="perspective-container cursor-pointer bg-white/95 p-4 rounded-3xl shadow-xl hover:shadow-2xl border border-orange-100 transition-all duration-300">
-                <div class="flex items-center space-x-3" style="transform: translateZ(30px);">
-                    <div class="relative">
-                        <!-- MGR Brand Leaf SVG -->
-                        <svg class="w-12 h-12 text-emerald-600" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 85 C35 75 40 45 80 15 C45 40 25 55 15 85 Z" fill="url(#leafGradient)" />
-                            <path d="M15 85 Q45 55 80 15" stroke="#1b5e20" stroke-width="3.5" stroke-linecap="round" />
-                            <defs>
-                                <linearGradient id="leafGradient" x1="15" y1="85" x2="80" y2="15" gradientUnits="userSpaceOnUse">
-                                    <stop offset="0%" stop-color="#4caf50" />
-                                    <stop offset="100%" stop-color="#2e7d32" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                        <div class="absolute -top-1 -left-1 bg-emerald-500 rounded-full p-0.5 border border-white">
-                            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex items-baseline space-x-0.5">
-                            <span class="text-2xl font-black tracking-tight text-gray-900 leading-none">MGR</span>
-                            <span class="text-[9px] font-bold text-gray-400">TM</span>
-                        </div>
-                        <p class="text-[10px] uppercase font-bold text-gray-500 tracking-wider">Mobile Pvt Ltd</p>
-                    </div>
-                </div>
-                <!-- Refurbished Authenticity Tag -->
-                <div class="mt-2.5 bg-gradient-to-r from-orange-600 to-red-600 text-white text-[10px] font-black tracking-widest text-center py-1.5 px-4 rounded-xl uppercase shadow-md" style="transform: translateZ(45px);">
-                    ★ Refurbished
-                </div>
-            </div>
+        <div class="feature-image">
+            <img src="images/razr-open.png" alt="Foldable Display">
+        </div>
 
-            <!-- Header Badge Tilted Ribbon: "TODAY BEST PRICE" -->
-            <div class="text-right hidden sm:block relative">
-                <div class="bg-orange-600 text-white font-black px-4 py-1.5 rounded-lg uppercase tracking-widest text-xs shadow-md inline-block transform -rotate-2 mr-2">
-                    ▲ TODAY
-                </div>
-                <div class="bg-black text-white text-2xl md:text-4xl font-montserrat-black px-6 py-2.5 mt-1.5 rounded-2xl uppercase tracking-wider shadow-xl transform rotate-2">
-                    BEST PRICE
-                </div>
-            </div>
-        </header>
+        <div class="feature-content">
+            <span>01</span>
+            <h3>Ultra Smooth Foldable Display</h3>
+            <p>
+                Experience a stunning OLED display with vibrant colors, silky smooth scrolling,
+                and a premium foldable design that fits comfortably in your pocket.
+            </p>
+        </div>
 
-        <!-- MAIN PRESENTATION BODY GRID -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center my-auto py-8">
+    </div>
 
-            <!-- Hero Spec Callouts (Left Column) -->
-            <div class="lg:col-span-4 space-y-6 text-center lg:text-left z-20">
-                <div class="inline-block bg-zinc-800 text-white px-5 py-2 rounded-full text-xs font-black tracking-widest uppercase shadow-md">
-                    MOTO SPECIAL DEAL
-                </div>
+    <!-- Feature 2 -->
+    <div class="feature-row reverse">
+
+        <div class="feature-image">
+            <img src="images/razr-fold.png" alt="Camera">
+        </div>
+
+        <div class="feature-content">
+            <span>02</span>
+            <h3>Flagship Camera</h3>
+            <p>
+                Capture crisp photos and cinematic videos with AI-enhanced imaging and excellent
+                low-light performance.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Feature 3 -->
+    <div class="feature-row">
+
+        <div class="feature-image">
+            <img src="images/razr-open.png" alt="Battery">
+        </div>
+
+        <div class="feature-content">
+            <span>03</span>
+            <h3>Long Lasting Battery</h3>
+            <p>
+                Stay powered throughout the day with fast charging and optimized battery
+                performance for work and entertainment.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= FEATURED PHONES ================= -->
+
+<section class="phones">
+
+    <div class="section-title">
+        <h2>Explore More Motorola Phones</h2>
+        <p>Premium devices available at MGR Mobile.</p>
+    </div>
+
+    <div class="phone-grid">
+
+        <div class="phone-card">
+
+            <img src="images/phone1.png" alt="Moto Edge 60">
+
+            <h3>Moto Edge 60</h3>
+
+            <p>12GB RAM | 256GB</p>
+
+            <h4>₹27,999</h4>
+
+            <a href="https://mgrmobile.com/?srsltid=AfmBOorxvoUTRl-a0dKNOgXlbVD46vuBoVdC6wxhSMRLj33dNcLgWU_D"
+   class="view-btn"
+   target="_blank"
+   rel="noopener noreferrer">
+    View Details
+</a>
+
+        </div>
+
+        <div class="phone-card">
+
+            <img src="images/phone2.png" alt="Moto Razr 50">
+
+            <h3>Moto Razr 50</h3>
+
+            <p>8GB RAM | 256GB</p>
+
+            <h4>₹29,999</h4>
+
+            <button>View Details</button>
+
+        </div>
+
+        <div class="phone-card">
+
+            <img src="images/phone3.png" alt="Moto G85">
+
+            <h3>Moto G85</h3>
+
+            <p>8GB RAM | 128GB</p>
+
+            <h4>₹17,999</h4>
+
+            <button>View Details</button>
+
+        </div>
+
+        <div class="phone-card">
+
+            <img src="images/phone4.png" alt="Moto Edge 50 Fusion">
+
+            <h3>Moto Edge 50 Fusion</h3>
+
+            <p>12GB RAM | 256GB</p>
+
+            <h4>₹23,999</h4>
+
+            <button>View Details</button>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= WHY MGR ================= -->
+
+<section class="why-mgr">
+
+    <div class="section-title light">
+
+        <h2>Why Choose MGR Mobile?</h2>
+
+        <p>Trusted by thousands of happy customers across Karnataka.</p>
+
+    </div>
+
+    <div class="stats">
+
+        <div class="stat-card">
+
+            <i class="fas fa-users"></i>
+
+            <h2>15K+</h2>
+
+            <p>Happy Customers</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fas fa-mobile-screen-button"></i>
+
+            <h2>100%</h2>
+
+            <p>Quality Checked</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fas fa-shield-halved"></i>
+
+            <h2>6 Months</h2>
+
+            <p>Warranty</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fas fa-truck-fast"></i>
+
+            <h2>24 Hours</h2>
+
+            <p>Fast Delivery</p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= CUSTOMER REVIEWS ================= -->
+
+<section class="reviews">
+
+    <div class="section-title">
+        <h2>What Our Customers Say</h2>
+        <p>Thousands of happy customers trust MGR Mobile for quality and service.</p>
+    </div>
+
+    <div class="review-container">
+
+        <div class="review-card">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                I purchased a Motorola Razr 50s from MGR Mobile. The phone looked
+                brand new and the delivery was very fast. Highly recommended!
+            </p>
+
+            <div class="customer">
+                <img src="images/user1.png" alt="">
                 <div>
-                    <h1 class="text-4xl md:text-6xl font-black text-zinc-900 tracking-tight leading-none">
-                        MOTO <br>
-                        <span class="text-6xl md:text-9xl font-montserrat-black text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-red-500 to-amber-500 block transform -skew-x-2 drop-shadow-sm mt-1">
-                            RAZR 50s
-                        </span>
-                    </h1>
-                </div>
-                <!-- Spec Detail Badge -->
-                <div class="inline-flex items-center justify-center space-x-2 bg-white border-2 border-orange-600 rounded-3xl px-8 py-2.5 shadow-lg transform -rotate-1 hover:rotate-0 transition-all">
-                    <span class="text-zinc-600 font-bold tracking-wider text-sm">SPECS:</span>
-                    <span class="text-orange-600 font-black text-xl md:text-2xl tracking-widest">8 / 256GB</span>
-                </div>
-            </div>
-
-            <!-- Pedestal Display Centerpiece (Middle Column) -->
-            <div class="lg:col-span-5 relative flex flex-col items-center justify-center min-h-[380px] md:min-h-[460px]">
-                
-                <!-- Radiant Spotlight Backlight Effect -->
-                <div class="absolute w-80 h-80 md:w-[420px] md:h-[420px] rounded-full bg-gradient-to-tr from-amber-300 to-orange-400 opacity-25 blur-3xl -z-10 animate-pulse"></div>
-
-                <!-- 3D Pedestal Oval Platform (Exact reference alignment) -->
-                <div class="absolute bottom-6 w-[300px] md:w-[420px] h-12 bg-gradient-to-t from-orange-100 to-white/80 border-b-4 border-orange-300/40 rounded-full shadow-[0_20px_45px_rgba(249,115,22,0.2)] -z-10 flex items-center justify-center">
-                    <div class="w-[96%] h-[85%] bg-gradient-to-b from-transparent to-amber-50/70 rounded-full border border-orange-200"></div>
-                </div>
-
-                <!-- Phone SVG Model 1: Fully Standing Vertical Razr -->
-                <div id="moto-phone-1" class="absolute z-10 bottom-14 transform translate-x-12 float-phone-1 hover:scale-105 transition-transform duration-300">
-                    <svg class="w-48 h-68 md:w-56 md:h-80 drop-shadow-[0_25px_35px_rgba(230,81,0,0.35)]" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="30" y="20" width="140" height="130" rx="16" fill="#141414" stroke="#4a4a4a" stroke-width="4"/>
-                        <rect x="36" y="26" width="128" height="118" rx="10" fill="url(#wallpaperGrad1)"/>
-                        
-                        <circle cx="65" cy="52" r="14" fill="#000" stroke="#ff9100" stroke-width="1.5"/>
-                        <circle cx="65" cy="52" r="7" fill="#1a1a1a" />
-                        <circle cx="100" cy="52" r="14" fill="#000" stroke="#ff9100" stroke-width="1.5"/>
-                        <circle cx="100" cy="52" r="7" fill="#1a1a1a" />
-                        <circle cx="130" cy="52" r="3" fill="#ffb300"/>
-
-                        <rect x="25" y="150" width="150" height="8" rx="4" fill="#ff6f00" stroke="#121212" stroke-width="2"/>
-
-                        <rect x="30" y="158" width="140" height="120" rx="16" fill="#f57c00" stroke="#ff6f00" stroke-width="4"/>
-                        <path d="M35 172 Q100 178 165 172" stroke="#e65100" stroke-width="1.5" stroke-dasharray="2 3"/>
-                        <path d="M35 204 Q100 220 165 204" stroke="#e65100" stroke-width="1.5" stroke-dasharray="2 3"/>
-
-                        <circle cx="100" cy="208" r="16" fill="#e65100" stroke="#ffb74d" stroke-width="2"/>
-                        <path d="M92 211 C92 203 96 203 100 208 C104 203 108 203 108 211 C108 214 104 214 100 210 C96 214 92 214 92 211 Z" fill="#fff"/>
-                        <text x="100" y="248" fill="#ffb74d" font-size="10" font-weight="bold" text-anchor="middle" letter-spacing="1">razr</text>
-
-                        <defs>
-                            <linearGradient id="wallpaperGrad1" x1="36" y1="26" x2="164" y2="144" gradientUnits="userSpaceOnUse">
-                                <stop offset="0%" stop-color="#ff3d00" />
-                                <stop offset="50%" stop-color="#ff9100" />
-                                <stop offset="100%" stop-color="#9c27b0" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
-
-                <!-- Phone SVG Model 2: Folded Square Cover Model -->
-                <div id="moto-phone-2" class="absolute z-20 bottom-10 transform -translate-x-12 float-phone-2 hover:scale-105 transition-transform duration-300">
-                    <svg class="w-48 h-60 md:w-56 md:h-72 drop-shadow-[0_28px_32px_rgba(0,0,0,0.35)]" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 120 L110 142 L190 120 L100 98 Z" fill="#b26a00" />
-                        
-                        <rect x="25" y="15" width="150" height="150" rx="22" fill="#e65100" stroke="#f57c00" stroke-width="4" transform="rotate(-6 100 100)"/>
-                        <rect x="34" y="24" width="132" height="132" rx="16" fill="#000" transform="rotate(-6 100 100)"/>
-                        <rect x="39" y="29" width="122" height="122" rx="12" fill="url(#wallpaperGrad2)" transform="rotate(-6 100 100)"/>
-                        
-                        <g transform="translate(100, 75) rotate(-6)">
-                            <circle cx="0" cy="0" r="16" fill="#fff" />
-                            <path d="M-8 4 C-8 -4 -3 -4 0 2 C3 -4 8 -4 8 4 C8 8 3 8 0 4 C-3 8 -8 8 -8 4 Z" fill="#e65100"/>
-                            <text x="0" y="28" fill="#fff" font-size="11" font-weight="black" text-anchor="middle" letter-spacing="0.5">motorola</text>
-                            <text x="0" y="40" fill="#ffd54f" font-size="8" font-weight="black" text-anchor="middle">razr 50s</text>
-                        </g>
-
-                        <g transform="translate(100, 138) rotate(-6)">
-                            <circle cx="-25" cy="0" r="10" fill="#111" stroke="#444" stroke-width="1.5" />
-                            <circle cx="-25" cy="0" r="4" fill="#000" />
-                            <circle cx="0" cy="0" r="10" fill="#111" stroke="#444" stroke-width="1.5" />
-                            <circle cx="0" cy="0" r="4" fill="#000" />
-                        </g>
-
-                        <defs>
-                            <linearGradient id="wallpaperGrad2" x1="39" y1="29" x2="161" y2="151" gradientUnits="userSpaceOnUse">
-                                <stop offset="0%" stop-color="#ab47bc" />
-                                <stop offset="50%" stop-color="#ff3d00" />
-                                <stop offset="100%" stop-color="#ffb300" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
-
-            </div>
-
-            <!-- Movable Price Tag Card (Right Column) -->
-            <div class="lg:col-span-3 flex justify-center lg:justify-end z-20">
-                <div id="price-tag" class="relative group bg-gradient-to-br from-orange-500 to-red-600 p-8 rounded-[2.5rem] shadow-[0_25px_45px_rgba(230,81,0,0.45)] text-center text-white border-2 border-orange-300 transform max-w-sm w-full transition-transform">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-stone-950 font-black text-[10px] tracking-widest px-5 py-2 rounded-full shadow-lg uppercase leading-none">
-                        LIMITED STOCK
-                    </div>
-
-                    <span class="block text-amber-200 text-3xl font-black tracking-widest mt-2">₹</span>
-                    <!-- Massive Highlight Price Tag -->
-                    <div class="text-5xl md:text-6xl font-montserrat-black tracking-tighter my-2 animate-pulse">
-                        31,999
-                    </div>
-                    
-                    <span class="block text-orange-200 text-xs line-through tracking-wider font-semibold">
-                        MRP: ₹74,999
-                    </span>
-                    <span class="inline-block bg-white/20 text-white rounded-full px-4 py-1.5 mt-3 text-[10px] font-black tracking-widest uppercase">
-                        SAVE 57% TODAY
-                    </span>
+                    <h4>Rahul S.</h4>
+                    <span>Bengaluru</span>
                 </div>
             </div>
 
         </div>
 
-        <!-- 3D CLICKABLE TRUST BADGES -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 py-6 w-full z-20">
-            
-            <!-- Badge 1: Brand New Condition -->
-            <div class="badge-card bg-white p-5 rounded-2xl shadow-md border-b-4 border-orange-600 flex items-center space-x-4 cursor-pointer hover:shadow-xl hover:bg-orange-50/40">
-                <div class="bg-orange-100 p-3 rounded-full text-orange-600 flex-shrink-0">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                </div>
+        <div class="review-card">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                Excellent customer support and genuine pricing. Received GST bill,
+                charger and tempered glass as promised.
+            </p>
+
+            <div class="customer">
+                <img src="images/user2.png" alt="">
                 <div>
-                    <h4 class="text-xs font-black uppercase text-orange-600 tracking-wider">Condition</h4>
-                    <p class="text-sm font-bold text-gray-800 uppercase">BRAND NEW CONDITION</p>
-                    <p class="text-[10px] text-gray-500">Rigorous 100-Point Performance Inspection</p>
+                    <h4>Priya M.</h4>
+                    <span>Mysuru</span>
                 </div>
             </div>
 
-            <!-- Badge 2: GST Bill & Warranty -->
-            <div class="badge-card bg-white p-5 rounded-2xl shadow-md border-b-4 border-orange-600 flex items-center space-x-4 cursor-pointer hover:shadow-xl hover:bg-orange-50/40">
-                <div class="bg-orange-100 p-3 rounded-full text-orange-600 flex-shrink-0">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                </div>
-                <div>
-                    <h4 class="text-xs font-black uppercase text-orange-600 tracking-wider">GST Compliant</h4>
-                    <p class="text-sm font-bold text-gray-800 uppercase">WITH GST BILL & WARRANTY</p>
-                    <p class="text-[10px] text-gray-500">Claim 18% Input Tax Credit + Store Warranty</p>
-                </div>
-            </div>
-
-            <!-- Badge 3: Assured Bonus Gifts -->
-            <div class="badge-card bg-white p-5 rounded-2xl shadow-md border-b-4 border-orange-600 flex items-center space-x-4 cursor-pointer hover:shadow-xl hover:bg-orange-50/40">
-                <div class="bg-orange-100 p-3 rounded-full text-orange-600 flex-shrink-0">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>
-                </div>
-                <div>
-                    <h4 class="text-xs font-black uppercase text-orange-600 tracking-wider">Assured Bonus</h4>
-                    <p class="text-sm font-bold text-gray-800 uppercase">+ EXCITING GIFTS</p>
-                    <p class="text-[10px] text-gray-500">Free Premium Charger & Tempered Protector</p>
-                </div>
-            </div>
         </div>
 
-        <!-- STICKY ACTION CONVERSION FOOTER -->
-        <footer class="w-full mt-2 py-4 z-20">
-            <a href="https://mgrmobile.com/?srsltid=AfmBOorxvoUTRl-a0dKNOgXlbVD46vuBoVdC6wxhSMRLj33dNcLgWU_D" target="_blank" rel="noopener noreferrer" 
-               class="group relative flex flex-col sm:flex-row items-center justify-between bg-gradient-to-r from-orange-600 via-orange-500 to-red-600 hover:from-orange-500 hover:to-red-500 text-white font-extrabold text-xl md:text-3xl rounded-3xl p-5 md:px-10 shadow-[0_20px_35px_rgba(249,115,22,0.45)] border-b-8 border-orange-800 hover:border-orange-700 transition-all duration-300 transform active:translate-y-1">
-                
-                <div class="flex items-center space-x-4">
-                    <div class="bg-white text-orange-600 p-3 rounded-full shadow-md group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                    </div>
-                    <span class="tracking-wide uppercase font-montserrat-black">ORDER NOW</span>
-                </div>
+        <div class="review-card">
 
-                <div class="text-yellow-300 font-extrabold tracking-tight mt-2 sm:mt-0 text-xl md:text-3xl hover:underline flex items-center space-x-1">
-                    <span>Mgrmobile.com</span>
-                    <svg class="w-6 h-6 md:w-8 md:h-8 inline group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            <div class="stars">★★★★★</div>
+
+            <p>
+                Amazing buying experience. The phone condition exceeded my
+                expectations and works perfectly.
+            </p>
+
+            <div class="customer">
+                <img src="images/user3.png" alt="">
+                <div>
+                    <h4>Arjun K.</h4>
+                    <span>Tumakuru</span>
                 </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Company -->
+
+        <div class="footer-box">
+
+            <img src="images/mgr-logo.png" class="footer-logo" alt="MGR Logo">
+
+            <p>
+                MGR Mobile is your trusted destination for premium refurbished
+                smartphones with genuine quality, GST billing, warranty,
+                and excellent customer support.
+            </p>
+
+        </div>
+
+        <!-- Quick Links -->
+
+        <div class="footer-box">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+
+                <li><a href="#">Home</a></li>
+
+                <li><a href="#">Phones</a></li>
+
+                <li><a href="#">Offers</a></li>
+
+                <li><a href="#">About</a></li>
+
+                <li><a href="#">Contact</a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- Contact -->
+
+        <div class="footer-box">
+
+            <h3>Contact</h3>
+
+            <p><i class="fas fa-phone"></i> +91 XXXXX XXXXX</p>
+
+            <p><i class="fas fa-envelope"></i> info@mgrmobile.com</p>
+
+            <p><i class="fas fa-location-dot"></i> Bengaluru, Karnataka</p>
+
+        </div>
+
+        <!-- Social -->
+
+        <div class="footer-box">
+
+            <h3>Follow Us</h3>
+
+            <div class="social-icons">
+
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                <a href="#"><i class="fab fa-instagram"></i></a>
+
+                <a href="#"><i class="fab fa-youtube"></i></a>
+
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+
+            </div>
+
+            <a href="https://mgrmobile.com/"
+               target="_blank"
+               class="visit-btn">
+                Visit Website
             </a>
-            <p class="text-right text-[10px] text-gray-500 mt-2 font-bold tracking-wider">*T&C APPLY</p>
-        </footer>
 
-    </main>
-
-    <!-- GLASSMORPHIC MODAL (Fired dynamically on bottom card clicks) -->
-    <div id="badge-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
-        <div class="bg-white rounded-3xl p-8 max-w-sm w-full mx-4 shadow-2xl border-4 border-orange-500 text-center transform scale-90 transition-all duration-300">
-            <div id="modal-icon" class="mx-auto w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 mb-4">
-                <!-- Swapped dynamically via JS -->
-            </div>
-            <h3 id="modal-title" class="text-2xl font-black text-gray-900 uppercase tracking-tight">TIER TITLE</h3>
-            <p id="modal-desc" class="text-gray-600 mt-3 text-sm leading-relaxed">Description details value.</p>
-            <button id="modal-close" class="mt-6 bg-zinc-900 text-white font-extrabold px-6 py-2.5 rounded-full hover:bg-orange-600 transition-colors uppercase tracking-widest text-xs">
-                Excellent!
-            </button>
         </div>
+
     </div>
 
-    <!-- CODE SCRIPTINGS SECTION -->
-    <script>
-        const paperOverlay = document.getElementById('paper-overlay');
-        const paperLeft = document.getElementById('paper-left');
-        const paperRight = document.getElementById('paper-right');
-        const crashingFist = document.getElementById('crashing-fist');
-        const mainContent = document.getElementById('main-content');
-        const priceTag = document.getElementById('price-tag');
-        const mgrLogo = document.getElementById('mgr-logo');
+    <div class="copyright">
 
-        let interactionTriggered = false;
+        © 2026 MGR Mobile. All Rights Reserved.
 
-        // Crash Reveal Timeline Trigger
-        function handleCrashReveal() {
-            if (interactionTriggered) return;
-            interactionTriggered = true;
+    </div>
 
-            paperOverlay.style.pointerEvents = 'none';
+</footer>
 
-            // Punch Impact Sequence
-            gsap.timeline()
-                .to(crashingFist, {
-                    scale: 1.4, 
-                    duration: 0.15, 
-                    ease: "power2.in"
-                })
-                .to(crashingFist, {
-                    scale: 0.8, 
-                    duration: 0.1, 
-                    ease: "bounce.out",
-                    onComplete: () => {
-                        // Impact shake simulator
-                        gsap.to(document.body, { x: 10, y: -10, duration: 0.05, repeat: 5, yoyo: true });
-                    }
-                })
-                .to(paperLeft, {
-                    xPercent: -110, 
-                    rotate: -15, 
-                    duration: 1.2, 
-                    ease: "power3.inOut"
-                }, "+=0.15")
-                .to(paperRight, {
-                    xPercent: 110, 
-                    rotate: 15, 
-                    duration: 1.2, 
-                    ease: "power3.inOut"
-                }, "<")
-                .to(crashingFist, {
-                    y: 900, 
-                    rotate: 45, 
-                    opacity: 0, 
-                    duration: 0.9, 
-                    ease: "power2.in"
-                }, "<")
-                .to(paperOverlay, {
-                    opacity: 0, 
-                    display: 'none', 
-                    duration: 0.5
-                }, "-=0.5")
-                .to(mainContent, {
-                    opacity: 1, 
-                    scale: 1, 
-                    duration: 0.8, 
-                    ease: "back.out(1.2)",
-                    onComplete: () => {
-                        // Elastic pricing tag slider
-                        gsap.fromTo(priceTag, 
-                            { x: 300, scale: 0.4, rotate: 30, opacity: 0 },
-                            { x: 0, scale: 1, rotate: 0, opacity: 1, duration: 1.4, ease: "elastic.out(1, 0.5)" }
-                        );
-                    }
-                }, "-=0.6");
-        }
+    <script src="js/script.js"></script>
 
-        // Automatic reveal fallback after 3.5 seconds
-        setTimeout(() => {
-            if (!interactionTriggered) {
-                handleCrashReveal();
-            }
-        }, 3500);
-
-        // 3D Parallax system for Logo Box
-        mgrLogo.addEventListener('mousemove', (e) => {
-            const rect = mgrLogo.getBoundingClientRect();
-            const x = e.clientX - rect.left; 
-            const y = e.clientY - rect.top; 
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = -(y - centerY) / 6; 
-            const rotateY = (x - centerX) / 6;
-
-            gsap.to(mgrLogo, {
-                rotateX: rotateX,
-                rotateY: rotateY,
-                transformPerspective: 600,
-                ease: "power2.out",
-                duration: 0.3
-            });
-        });
-
-        mgrLogo.addEventListener('mouseleave', () => {
-            gsap.to(mgrLogo, {
-                rotateX: 0,
-                rotateY: 0,
-                ease: "power3.out",
-                duration: 0.6
-            });
-        });
-
-        // Bottom trust badges click event handlers
-        const badges = document.querySelectorAll('.badge-card');
-        const badgeModal = document.getElementById('badge-modal');
-        const modalIcon = document.getElementById('modal-icon');
-        const modalTitle = document.getElementById('modal-title');
-        const modalDesc = document.getElementById('modal-desc');
-        const modalClose = document.getElementById('modal-close');
-
-        const trustDetails = [
-            {
-                title: "Certified Condition",
-                desc: "This smartphone model undergoes our certified 100-point rigorous performance, functional check, and cosmetic grading tests to function exactly like brand-new pristine units.",
-                icon: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>`
-            },
-            {
-                title: "Business Invoicing",
-                desc: "Get a valid, legal invoice with clear breakdown parameters so corporate entities can easily claim back an 18% GST input tax credit. Covered by a secure store warranty tier.",
-                icon: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>`
-            },
-            {
-                title: "Added Accessories",
-                desc: "Your shipment includes an exclusive bonus pack absolutely free: a custom Moto high-speed power adapter, premium durable USB charging cable, and a high-strength tempered glass guard.",
-                icon: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>`
-            }
-        ];
-
-        badges.forEach((badge, idx) => {
-            badge.addEventListener('mouseenter', () => {
-                gsap.to(badge, { scale: 1.04, y: -4, shadow: "0 20px 25px rgba(0,0,0,0.15)", duration: 0.2 });
-            });
-            badge.addEventListener('mouseleave', () => {
-                gsap.to(badge, { scale: 1, y: 0, shadow: "0 4px 6px rgba(0,0,0,0.05)", duration: 0.2 });
-            });
-
-            badge.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const info = trustDetails[idx];
-                modalIcon.innerHTML = info.icon;
-                modalTitle.innerText = info.title;
-                modalDesc.innerText = info.desc;
-
-                badgeModal.classList.remove('opacity-0', 'pointer-events-none');
-                badgeModal.querySelector('div').classList.remove('scale-90');
-                badgeModal.querySelector('div').classList.add('scale-100');
-            });
-        });
-
-        modalClose.addEventListener('click', (e) => {
-            e.stopPropagation();
-            badgeModal.classList.add('opacity-0', 'pointer-events-none');
-            badgeModal.querySelector('div').classList.remove('scale-100');
-            badgeModal.querySelector('div').classList.add('scale-90');
-        });
-    </script>
 </body>
+
 </html>
